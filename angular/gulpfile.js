@@ -35,5 +35,3 @@ gulp.task('serve', ['sass'], function () {
 
 });
 
-
-//gulp.task('default', ['serve']);
