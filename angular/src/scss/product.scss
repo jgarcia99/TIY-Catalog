@@ -6,22 +6,49 @@ $main: cornflowerblue;
 }
 .product-wrap {
 	width: 33%;
-	outline: 1px solid black;
+	border: $main solid 3px;
 	position: relative;	
 	
-	img {
-		width: 70%;
-		margin: 0 15%;
-	}	
-	.morepictures {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 20px;
-		height: 20px;
-		outline: 1px solid red;		
-		text-align: center;	
-	}
+    .topcontent{
+        border-bottom: solid $main 3px;
+        img {
+            width: 70%;
+            margin: 0 15%;
+        }	
+        .morepictures {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            outline: 1px solid red;		
+            text-align: center;	
+        }
+    } // topcontent
+    
+    .image-footer {
+        width: 100%;
+        a {
+            display: inline-block;
+            text-align: center;
+            width: calc(25% - 6px);
+            border-right: solid $main 3px;
+        }
+        a:last-child {
+            border-right: none;
+        }
+    }
+    
+    .productinfo {
+        .info {
+            position: absolute;
+            margin: 2ex 0.5em;
+        }
+        .price {
+            right: 0;
+        }
+    }
+    
 
 
 
