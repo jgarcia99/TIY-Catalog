@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 
 gulp.task('sass', function () {
@@ -11,14 +12,14 @@ gulp.task('sass', function () {
           ],
           onError: console.error.bind(console, 'Sass error:')
         }))
-        .pipe(gulp.dest('src/css'));
+        .pipe(gulp.dest('src/css'))
+        .pipe(reload({
+            stream: true
+        }));
 });
 
-gulp.task('watch', function () {
-    gulp.watch('src/scss/*.scss', ['sass']);
-});
 
-gulp.task('serve', function () {
+gulp.task('serve', ['sass'], function () {
     browserSync({
         server: {
             baseDir: "./src",
@@ -28,4 +29,14 @@ gulp.task('serve', function () {
             }
         }
     });
+
+    gulp.watch('src/scss/*.scss', ['sass']);
+    gulp.watch("src/*.html").on('change', reload);
+
 });
+
+<<<<<<< HEAD
+gulp.task('default', ['serve']);
+=======
+gulp.task('default', ['serve']);
+>>>>>>> upstream/master
