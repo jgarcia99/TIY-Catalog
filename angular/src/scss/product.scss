@@ -1,3 +1,4 @@
+@import 'bootstrap';
 $main: cornflowerblue;
 
 #container {
@@ -33,6 +34,10 @@ $main: cornflowerblue;
             text-align: center;
             width: calc(25% - 6px);
             border-right: solid $main 3px;
+            
+//            span {
+//                @extend glyphicon;
+//            }
         }
         a:last-child {
             border-right: none;
