@@ -27,20 +27,31 @@ $main: cornflowerblue;
         }
     } // topcontent
     
-    .image-footer {
+    image-footer {
         width: 100%;
-        a {
-            display: inline-block;
-            text-align: center;
-            width: calc(25% - 6px);
-            border-right: solid $main 3px;
-            
-//            span {
-//                @extend glyphicon;
-//            }
-        }
-        a:last-child {
-            border-right: none;
+        overflow: hidden;
+        ul {
+            list-style: none;
+            li {
+                a:hover {
+                    text-decoration: none;
+                }
+                text-align: center;
+                line-height: 3em;
+                box-sizing: border-box;
+                border-right: solid $main 3px;
+                display: block;
+                float: left;
+                width: 25%;
+                margin: 0;
+            }
+            li:last-child {
+                border-right: none;
+            }
+            li:hover {
+                background-color: $main;
+                color: white;
+            }
         }
     }
     
